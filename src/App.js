@@ -2,33 +2,36 @@ import React, { Component } from 'react';
 import IncrementButtons from './Buttons/IncrementButtons';
 import CardList from './UserInput/CardList';
 import Card from './UserInput/Card';
+import Form from './UserInput/Form';
 import './App.css';
 
 class App extends React.Component { // very good job babes
   constructor(props) {
     super(props);
-    this.myMethodName = myMethodName.bind(this);
+    this.state = {
+      cards: []
+    };
+
+    this.addNewCard = this.addNewCard.bind(this);
   }
+
+  addNewCard = (cardInfo) => {
+    this.setState(prevState => ({
+      cards: prevState.cards.concat(cardInfo)
+    }));
+  };
+
   render() {
-    console.log(this.props.cards);
     return (
       <div>
-        <div>
+        {/* <div>
          <h1>React Game</h1>
           <IncrementButtons />
-        </div>
+        </div> */}
         <div>
-          {this.props.cards.map((card, index) => {
-            return (
-              <Card 
-                key={index}
-                name={card.name} 
-                avatar_url={card.avatar_url} 
-                company={card.company} 
-              />
-            )
-            }
-          )}
+          <Form onSubmit={this.addNewCard} />
+          <CardList cards={this.state.cards} />
+          
         </div>
       </div>
     );
