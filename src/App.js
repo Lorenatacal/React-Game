@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import IncrementButtons from './Buttons/IncrementButtons';
+import CardList from './UserInput/CardList';
 import Card from './UserInput/Card';
 import './App.css';
 
-class App extends React.Component {
+class App extends React.Component { // very good job babes
+  constructor(props) {
+    super(props);
+    this.myMethodName = myMethodName.bind(this);
+  }
   render() {
+    console.log(this.props.cards);
     return (
       <div>
         <div>
@@ -12,7 +18,17 @@ class App extends React.Component {
           <IncrementButtons />
         </div>
         <div>
-          <Card />
+          {this.props.cards.map((card, index) => {
+            return (
+              <Card 
+                key={index}
+                name={card.name} 
+                avatar_url={card.avatar_url} 
+                company={card.company} 
+              />
+            )
+            }
+          )}
         </div>
       </div>
     );

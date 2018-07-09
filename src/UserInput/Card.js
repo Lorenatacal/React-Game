@@ -1,13 +1,13 @@
 import React from 'react';
-import '../App.css';
+import './Card.css';
 
 const Card = (props) => {
     return (
-        <div>
-            <img src="http://placehold.it/75" />
-            <div>
-                <div>Name here...</div>
-                <div>Company Name here...</div>
+        <div style={{margin: '1em'}}>
+            <img width="75" src={props.avatar_url} />
+            <div  style={{display: 'inline-block', marginLeft: 10}}>
+                <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>{props.name}</div>
+                <div>{props.company}</div>
             </div>
         </div>
     );
