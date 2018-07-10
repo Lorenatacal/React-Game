@@ -3,6 +3,7 @@ import IncrementButtons from './Buttons/IncrementButtons';
 import CardList from './UserInput/CardList';
 import Card from './UserInput/Card';
 import Form from './UserInput/Form';
+import Game from './ReactGame/Game';
 import './App.css';
 
 class App extends React.Component { // very good job babes
@@ -31,7 +32,10 @@ class App extends React.Component { // very good job babes
         <div>
           <Form onSubmit={this.addNewCard} />
           <CardList cards={this.state.cards} />
-          
+        </div>
+
+        <div>
+          <Game />
         </div>
       </div>
     );
