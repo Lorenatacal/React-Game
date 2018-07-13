@@ -93,7 +93,7 @@ class Game extends React.Component {
     updateDoneStatus = () => {
         this.setState(prevState => {
             if (prevState.usedNumbers.length === 9) {
-                return { doneStatus: 'Done.Nice!' };
+                return { doneStatus: 'Congratulations.You Won!' };
             }
             if (prevState.redraws === 0  && !this.possibleSolutions(prevState)) {
                 return { doneStatus: 'GameOver!' };
@@ -113,7 +113,9 @@ class Game extends React.Component {
 
         return (
             <div className="container">
-                <h3>Play Nine</h3>
+                <br />
+                <h3 className="text-center">Play Nine</h3>
+                <br />
                 <div className="row">
                     <Stars numberOfStars={randomNumberOfStars}/>
                     <GameButton selectedNumbers={selectedNumbers}
@@ -129,8 +131,8 @@ class Game extends React.Component {
                 {doneStatus ?
                     <DoneFrame resetGame={this.resetGame} doneStatus={doneStatus} /> :
                     <Numbers selectedNumbers={selectedNumbers} 
-                         selectNumber={this.selectNumber}
-                         usedNumbers={usedNumbers} />
+                             selectNumber={this.selectNumber}
+                             usedNumbers={usedNumbers} />
                 }
             </div>
         )

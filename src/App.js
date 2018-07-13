@@ -29,10 +29,10 @@ class App extends React.Component { // very good job babes
          <h1>React Game</h1>
           <IncrementButtons />
         </div> */}
-        <div>
+        {/* <div>
           <Form onSubmit={this.addNewCard} />
           <CardList cards={this.state.cards} />
-        </div>
+        </div> */}
 
         <div>
           <Game />
