@@ -23,3 +23,28 @@ span {
     background-color: #aaddaa;
     color: #99bb99;
 }
+
+.instructionsButon {
+    border-radius: 20%;
+    background-color: orange;
+    box-align: center;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    position: relative;
+    left: 45%;
+}
+
+p {
+    margin: 0.9em;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.instructions-invisible {
+    visibility: hidden;
+}
+
+.instructions-visible {
+    visibility: inherit;
+}

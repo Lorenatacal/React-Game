@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ReactGame/Game.css';
 import IncrementButtons from './Buttons/IncrementButtons';
 import CardList from './UserInput/CardList';
 import Card from './UserInput/Card';
@@ -36,6 +37,7 @@ class App extends React.Component { // very good job babes
 
         <div>
           <Game />
+          <br /><br />
         </div>
       </div>
     );

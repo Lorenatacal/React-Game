@@ -4,6 +4,7 @@ import Answer from './Answer';
 import GameButton from './GameButton';
 import Stars from './Stars';
 import Numbers from './Numbers';
+import Instructions from "./Instructions";
 import DoneFrame from './DoneFrame';
 import _ from 'lodash';
 
@@ -134,6 +135,8 @@ class Game extends React.Component {
                              selectNumber={this.selectNumber}
                              usedNumbers={usedNumbers} />
                 }
+                <br />
+                <Instructions  />
             </div>
         )
     }
